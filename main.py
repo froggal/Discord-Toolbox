@@ -2,9 +2,6 @@ import os
 import discord
 from discord.ext import commands
 import random
-from baekjoon import boj
-from baekjoon import solvedac
-from baekjoon import problem
 
 intents = discord.Intents.all()
 app = commands.Bot(command_prefix='$', intents=intents)
@@ -19,7 +16,7 @@ async def on_ready():
 
 @app.command()
 async def 도움말(ctx):
-    await ctx.reply(embed=embed("도움말", "도움말은 여기서 확인해주세요!"))
+    await ctx.reply(embed=embed("도움말", "도움말은 여기서 확인해주세요! \n https://keyfrog.notion.site/3b2ac8d6f257421d82601e22ab7ddbde?v=85a5afa584864c11affd4dc97c5230ca&pvs=4"))
 
 @app.command()
 async def 사칙연산(ctx, type, left: int, right: int):
