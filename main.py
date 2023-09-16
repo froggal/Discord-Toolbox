@@ -16,6 +16,8 @@ async def on_ready():
 
 @app.command()
 async def 도움말(ctx):
-    await ctx.send("안녕하세요")
+    await ctx.reply(embed=embed("도움말", "도움말은 여기서 확인해주세요!"))
+
+
 
 app.run(os.getenv("DICOTOKEN"))
