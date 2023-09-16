@@ -1,6 +1,7 @@
 import os
 import discord
 from discord.ext import commands
+import random
 from baekjoon import boj
 from baekjoon import solvedac
 from baekjoon import problem
