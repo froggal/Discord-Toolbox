@@ -12,7 +12,7 @@ def embed(title, description, color=random.randint(0x000000, 0xFFFFFF)):
 @app.event
 async def on_ready():
     print('Connected to Discord')
-    await app.change_presence(status=discord.Status.online, activity=discord.Game(f"$도움말, {app.guilds}개의 서버에서 작동 중"))
+    await app.change_presence(status=discord.Status.online, activity=discord.Game(f"$도움말, {str(len(app.guilds))}개의 서버에서 작동 중"))
 
 @app.command()
 async def 도움말(ctx):
