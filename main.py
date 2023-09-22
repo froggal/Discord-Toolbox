@@ -42,4 +42,4 @@ async def 주사위(ctx):
 
 
 
-app.run("MTE1NDU2OTU1OTA4MTI0MjY3NQ.GNPqbR.X0cZC1FFWNbVn4fa6OQofgCae2eL7-U8_LOKUo")
+app.run()
