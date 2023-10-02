@@ -2,11 +2,14 @@ import os
 import discord
 from discord.ext import commands
 import random
+import inko
+from langdetect import detect
 
 intents = discord.Intents.all()
 app = commands.Bot(command_prefix='$', intents=intents)
 def embed(title, description, color=random.randint(0x000000, 0xFFFFFF)):
     return discord.Embed(title=title, description=description, color=color)
+myInko = inko.Inko()
 
 
 @app.event
@@ -40,6 +43,16 @@ async def 주사위(ctx):
         embed=embed('🎲 주사위', f'숫자는 {random.randrange(1, 6)}이예요!')
     )
 
-
+@app.command()
+async def 한영타변환(ctx, data):
+    detected = detect(data)
+    if detected == 'ko' :
+        await ctx.reply(
+            embed=embed('한영타 변환', f'{data}를 영타로 변환하면, {myInko.ko2en(data)} 입니다.')
+        )
+    else :
+        await ctx.reply(
+            embed=embed('한영타 변환', f'{data}를 한타로 변환하면, {myInko.en2ko(data)} 입니다.')
+        )
 
 app.run()
